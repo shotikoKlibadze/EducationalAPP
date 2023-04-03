@@ -13,6 +13,7 @@
 		092A3D8D29CDE45200EA1AA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 092A3D8C29CDE45200EA1AA0 /* Preview Assets.xcassets */; };
 		092A3DB429D4376500EA1AA0 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A3DB329D4376500EA1AA0 /* Styles.swift */; };
 		092A3DBC29D6BFFC00EA1AA0 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092A3DBB29D6BFFC00EA1AA0 /* AccountView.swift */; };
+		098CD3B129DB31F900A8902E /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098CD3B029DB31F900A8902E /* HexagonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		092A3D8C29CDE45200EA1AA0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		092A3DB329D4376500EA1AA0 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		092A3DBB29D6BFFC00EA1AA0 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		098CD3B029DB31F900A8902E /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				092A3D8529CDE45000EA1AA0 /* EducationalAPPApp.swift */,
 				092A3D8729CDE45000EA1AA0 /* ContentView.swift */,
 				092A3DBB29D6BFFC00EA1AA0 /* AccountView.swift */,
+				098CD3B029DB31F900A8902E /* HexagonView.swift */,
 				092A3DB329D4376500EA1AA0 /* Styles.swift */,
 				092A3D8929CDE45200EA1AA0 /* Assets.xcassets */,
 				092A3D8B29CDE45200EA1AA0 /* Preview Content */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				092A3DBC29D6BFFC00EA1AA0 /* AccountView.swift in Sources */,
+				098CD3B129DB31F900A8902E /* HexagonView.swift in Sources */,
 				092A3DB429D4376500EA1AA0 /* Styles.swift in Sources */,
 				092A3D8829CDE45000EA1AA0 /* ContentView.swift in Sources */,
 				092A3D8629CDE45000EA1AA0 /* EducationalAPPApp.swift in Sources */,
