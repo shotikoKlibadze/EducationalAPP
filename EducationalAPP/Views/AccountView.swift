@@ -30,7 +30,7 @@ struct AccountView: View {
     
     var profile: some View {
         VStack(spacing: 8) {
-            Image(systemName: "person.crop.circle.badge.checkmark")
+            Image(systemName: "person.crop.circle.fill.badge.checkmark")
                 .symbolVariant(.circle.fill)
                 .font(.system(size: 32))
                 .symbolRenderingMode(.palette)
@@ -38,18 +38,20 @@ struct AccountView: View {
                 .padding()
                 .background(Circle().fill(.ultraThinMaterial))
                 .background(
-                    Image(systemName: "hexagon")
-                        .symbolVariant(.fill)
-                        .foregroundColor(.blue)
-                        .font(.system(size: 200))
+                    HexagonView()
                         .offset(x: -50, y: -100)
-            )
-            Text("Shota")
+                )
+                .background(
+                    BlobView()
+                        .offset(x: 200, y: 0)
+                        .scaleEffect(0.6)
+                )
+            Text("Meng To")
                 .font(.title.weight(.semibold))
             HStack {
                 Image(systemName: "location")
-                    .imageScale(.small)
-                Text("Georgia")
+                    .imageScale(.large)
+                Text("Canada")
                     .foregroundColor(.secondary)
             }
         }
@@ -59,13 +61,13 @@ struct AccountView: View {
     
     var menu: some View {
         Section {
-            NavigationLink(destination: ContentView()) {
+            NavigationLink(destination: HomeView()) {
                 Label("Settings", systemImage: "gear")
             }
             NavigationLink { Text("Billing") } label: {
                 Label("Billing", systemImage: "creditcard")
             }
-            NavigationLink { Text("Billing") } label: {
+            NavigationLink { HomeView() } label: {
                 Label("Help", systemImage: "questionmark")
             }
         }
