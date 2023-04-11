@@ -10,35 +10,43 @@ import SwiftUI
 struct HomeView: View {
     
     @State var hasScrolled = false
+    @Namespace var namespace
+    @State var show = false
     
     var body: some View {
         ZStack {
-            
             Color("Background").ignoresSafeArea()
             
             ScrollView {
-                
                 scrollDetection
                 
                 featured
                 
-                Color.clear.frame(height: 1000)
+                Text("Courses".uppercased())
+                    .font(.footnote.weight(.semibold))
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+                
+                if !show {
+                    CourseItem(namespace: namespace, show: $show)
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                                show.toggle()
+                            }
+                        }
+                }
             }
             .coordinateSpace(name: "scroll")
-            .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
-                withAnimation(.easeInOut) {
-                    if value < 0 {
-                        hasScrolled = true
-                    } else  {
-                        hasScrolled = false
-                    }
-                }
-            })
             .safeAreaInset(edge: .top, content: {
                 Color.clear.frame(height: 70)
             })
-            .overlay {
+            .overlay(
                 NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
+            )
+            
+            if show {
+                CourseView(namespace: namespace, show: $show)
             }
         }
     }
@@ -49,6 +57,15 @@ struct HomeView: View {
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
         .frame(height: 0)
+        .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
+            withAnimation(.easeInOut) {
+                if value < 0 {
+                    hasScrolled = true
+                } else  {
+                    hasScrolled = false
+                }
+            }
+        })
     }
     
     var featured: some View {
